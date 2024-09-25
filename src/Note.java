@@ -25,7 +25,7 @@ public class Note implements Comparable<Note> {
 
     //вывести в строку для записи в файл
     public String toString(){
-        return "\""+ date.toString() + "\"\t\"" + title + "\"\t\t\"" + content + '\"';
+        return "\"%s\"\t\"%s\"\t\"%s\"".formatted(date.toString(), title, content);
     }
 
     //изменить заметку, изменить только по полям, чтобы легко вводить не через конструктор, switch вынести в меню
