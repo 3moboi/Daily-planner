@@ -43,9 +43,22 @@ public class DateNote implements Comparable<DateNote>{
 
     //вспомогательный компаратор для сортировки Note по датам.
     public int compareTo(DateNote alien){
+        Date a, b;
+        //если у заметки дата не зафиксирована, то она считается за сегодняшний день
         if(date == null){
-            return 0;
+            a = new Date();
         }
-        return this.date.compareTo(alien.date);
+        else{
+            a = date;
+        }
+
+        if(alien.date == null){
+            b = new Date();
+        }
+        else{
+            b = alien.date;
+        }
+
+        return a.compareTo(b);
     }
 }
